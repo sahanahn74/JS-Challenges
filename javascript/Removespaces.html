@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>String Remove Spaces</title>
+  
+</head>
+<body>
+    <h1 style="text-align: center;">String Remove Spaces</h1>
+    <script>
+        var x = prompt('Enter a long  String: ');
+        space=function(x){
+            const arr=x.split(" ");
+            let a=[]
+            for(let i=0;i<arr.length;i++)
+            {
+                const temp=arr[i].trim();
+                a.push(temp);
+            }
+            const res=a.join("");
+            return res;
+        }
+        document.write('<h2 style="text-align: center;"> Result is: ' + space(x) + '</h2>');
+    </script>
+</body>
+</html>

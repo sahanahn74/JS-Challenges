@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Century from Year</title>
+<script>
+function getCentury() {
+    var year = parseInt(document.getElementById("year").value);
+    var century = Math.ceil(year / 100);
+    document.getElementById("result").innerHTML = "The century for year " + year + " is: " + century;
+}
+</script>
+</head>
+<body>
+
+<h2>Enter a Year to get it's Century</h2>
+
+<input style="background-color: aliceblue;" type="number" id="year" placeholder="Enter a year">
+<button style="background-color: aqua;" onclick="getCentury()">Get Century</button>
+
+<div id="result"></div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Average of Array</title>
+</head>
+<body>
+    <h1>Average of Array</h1>
+    
+    <label for="numberArray">Enter numbers separated by commas:</label>
+    <input type="text" id="numberArray">
+    <br><br>
+
+    <button onclick="findAverage()">Find Average</button>
+    <br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function findAverage() {
+            var numberArray = document.getElementById("numberArray").value.split(",").map(Number);
+            
+            if (numberArray.length === 0) {
+                document.getElementById("result").textContent = "Array is empty.";
+                return;
+            }
+
+            var sum = numberArray.reduce(function(a, b) { return a + b; }, 0);
+            var average = sum / numberArray.length;
+            document.getElementById("result").textContent = "Average: " + average.toFixed(2);
+        }
+    </script>
+</body>
+</html>

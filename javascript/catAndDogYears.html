@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat and Dog years</title>
+</head>
+<body>
+
+    <script>
+        const age = prompt("Enter human year ");
+        function year(x)
+        {
+            let cat;
+            let dog;
+            if (x==1)
+            {
+                return [x,15,15];
+            }
+            if (x==2)
+            {
+                return [x,24,24];
+            }6
+
+            const excessyear=x-2;
+            const extracat=excessyear*4;
+            const extradog=excessyear*5;
+            return [x,24+extracat,24+extradog];    
+
+    }
+    const res = year(age);
+    document.write('<h2> Results:<br></h2>');
+    document.write('<h4><br>Human: ' + res[0]+ '<br>Cat: '+res[1]+ '<br>Dog: ' +res[2]+ '</h4>');
+
+    </script>
+    
+</body>
+</html>

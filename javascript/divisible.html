@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Divisibility Checker</title>
+</head>
+<body>
+    <h1>Divisibility Checker</h1>
+    
+    <label for="number">Enter a Number:</label>
+    <input type="number" id="number">
+    <br><br>
+
+    <label for="x">Enter x:</label>
+    <input type="number" id="x">
+    <br><br>
+
+    <label for="y">Enter y:</label>
+    <input type="number" id="y">
+    <br><br>
+
+    <button onclick="checkDivisibility()">Check Divisibility</button>
+    <br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function checkDivisibility() {
+            var number = parseInt(document.getElementById("number").value);
+            var x = parseInt(document.getElementById("x").value);
+            var y = parseInt(document.getElementById("y").value);
+
+            if (number % x === 0 && number % y === 0) {
+                document.getElementById("result").textContent = number + " is divisible by both " + x + " and " + y;
+            } else {
+                document.getElementById("result").textContent = number + " is not divisible by both " + x + " and " + y;
+            }
+        }
+    </script>
+</body>
+</html>

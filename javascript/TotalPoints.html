@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Total Points</title>
+</head>
+<body>
+    <script>
+
+        
+        
+
+        function points(gamesArray)
+        {
+            let totpt=0;
+            for (let i=0; i< gamesArray.length;i++)
+        {
+            const value=gamesArray[i];
+            const parts=value.split(":");
+            const x = parts[0];
+            const y = parts[1];
+
+            if(x>y)
+            {
+                totpt = totpt + 3;
+            }
+            else if (x==y)
+            {
+                totpt = totpt + 1;
+            }
+        }
+        return totpt;
+        }
+
+        const input = prompt("Enter elements separated by comma");
+        const array = input.split(",");
+        const result = points(array);
+        document.write('<h2>Result is: ' + result + '</h2>');
+
+        
+    </script>
+    
+</body>
+</html>

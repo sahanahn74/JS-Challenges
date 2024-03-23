@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Array Addition</title>
+<script>
+function addArrays() {
+    var array1 = document.getElementById("array1").value.split(',').map(Number);
+    var array2 = document.getElementById("array2").value.split(',').map(Number);
+
+    var sumArray = [];
+    var maxLength = Math.max(array1.length, array2.length);
+    var sum1 = array1.reduce((acc, cur) => acc + cur, 0);
+    var sum2 = array2.reduce((acc, cur) => acc + cur, 0);
+    var totalSum = sum1 + sum2;
+
+    for (var i = 0; i < maxLength; i++) {
+        var sum = (array1[i] || 0) + (array2[i] || 0);
+        sumArray.push(sum);
+    }
+
+    document.getElementById("result").innerHTML = "Total Sum: " + totalSum + "<br>" + "Sum of arrays: [" + sumArray.join(', ') + "]";
+}
+</script>
+</head>
+<body>
+
+<h2>Array Addition</h2>
+
+<p>Enter elements of Array 1 (separated by commas):</p>
+<input style="background-color:azure;" type="text" id="array1" placeholder="e.g., 1, 2, 3">
+
+<p>Enter elements of Array 2 (separated by commas):</p>
+<input style="background-color:azure;" type="text" id="array2" placeholder="e.g., 4, 5, 6">
+<br>
+<br>
+
+<button style="background-color: lightgreen;" onclick="addArrays()">Add Arrays</button>
+
+<div id="result"></div>
+
+</body>
+</html>

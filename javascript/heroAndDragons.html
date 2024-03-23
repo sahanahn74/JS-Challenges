@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero and Dragons</title>
+</head>
+<body>
+    <h1 style="background-color:bisque; text-align: center;">HERO AND DRAGONS</h1>
+
+    <div style="text-align: center;">
+        <label for="bullets">Number of Bullets:</label>
+        <input type="number" id="bullets" placeholder="Enter the number of bullets">
+        <br><br>
+        <label for="dragons">Number of Dragons:</label>
+        <input type="number" id="dragons" placeholder="Enter the number of dragons">
+        <br><br>
+        <button onclick="calculateResult()">Calculate Result</button>
+    </div>
+
+    <h2 id="result" style="text-align: center; background-color: rgb(207, 90, 27); border:20px;"></h2>
+
+    <script>
+        function hero(arr) {
+            return arr[0] / arr[1] >= 2;
+        }
+
+        function calculateResult() {
+            const bullets = parseInt(document.getElementById("bullets").value);
+            const dragons = parseInt(document.getElementById("dragons").value);
+            const x = hero([bullets, dragons]);
+
+            let res;
+            if (x) {
+                res = "Hero won";
+            } else {
+                res = "Dragons won";
+            }
+
+            document.getElementById("result").innerText = "Result is: " + res;
+        }
+    </script>
+</body>
+</html>
